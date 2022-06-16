@@ -20,7 +20,7 @@ export const Card = () => {
 				</div>
 				<div className={styles.quantity}>
 					<span>0.1</span>
-					<span>kg</span>
+					<span>kg</span>f
 				</div>
 			</div>
 
