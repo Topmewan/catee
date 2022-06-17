@@ -3,6 +3,8 @@
 
 html {
 	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
 }
 
 *,
@@ -19,6 +21,5 @@ body {
 	min-width: 320px;
 	height: 100%;
 	width: 100%;
-	overflow: hidden;
 	font-family: 'Trebuchet MS', sans-serif;
 }
