@@ -17,6 +17,10 @@
 		gap: 25px;
 		text-align: center;
 
+		@media (max-width: 1150px) {
+			padding: 0 15px;
+		}
+
 		> {
 			h1 {
 				font-family: 'Exo 2', sans-serif;
@@ -31,9 +35,12 @@
 		.list {
 			width: 100%;
 			display: flex;
-			gap: 80px;
 			justify-content: center;
-			align-items: center;
+			gap: 80px;
+
+			@media (max-width: 1024px) {
+				flex-wrap: wrap;
+			}
 		}
 	}
 }
