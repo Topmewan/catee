@@ -2,11 +2,13 @@
 	display: flex;
 	flex-direction: column;
 	gap: 14px;
+
+	//Card
+
 	.card {
-		flex: 1;
 		display: flex;
 		flex-direction: column;
-		background-color: white;
+		background-color: #f2f2f2;
 		padding: 21px 0 0 0;
 		min-height: 480px;
 		align-items: center;
@@ -18,7 +20,19 @@
 		overflow: hidden;
 		-webkit-clip-path: polygon(13.5% 0, 100% 0, 100% 100%, 0 100%, 0% 9%);
 		clip-path: polygon(13.5% 0, 100% 0, 100% 100%, 0 100%, 0% 9%);
+		cursor: pointer;
+		transition: all 0.3s ease;
 
+		&:hover {
+			border: 4px solid #2ea8e6;
+
+			&::before {
+				content: '';
+				background: #2ea8e6;
+			}
+		}
+
+		//Left edge
 		&::before {
 			content: '';
 			position: absolute;
@@ -31,8 +45,74 @@
 			-webkit-transform: rotate(45deg);
 			-ms-transform: rotate(45deg);
 			transform: rotate(45deg);
+			transition: inherit;
+			z-index: 11;
 		}
 
+		//Card Active
+
+		&.active {
+			border: 4px solid #d91667;
+
+			&:hover {
+				border: 4px solid #e52e7a;
+
+				.quantity {
+					background-color: #e52e7a;
+				}
+
+				&::before {
+					content: '';
+					background: #e52e7a;
+				}
+			}
+
+			&::before {
+				background: #d91667;
+			}
+
+			.quantity {
+				background: #d91667;
+			}
+		}
+
+		//Card Disabled
+
+		&.disabled {
+			border: 4px solid #b3b3b3;
+			pointer-events: none;
+
+			.text {
+				.title,
+				.name,
+				.ingredient,
+				.extra {
+					color: #b3b3b3;
+				}
+			}
+
+			&::before {
+				background: #b3b3b3;
+			}
+
+			.bg {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+
+				background-color: rgba($color: #ffffff, $alpha: 0.5);
+				z-index: 10;
+			}
+
+			.quantity {
+				background-color: #b3b3b3;
+				z-index: 11;
+			}
+		}
+
+		//Text Block
 		.text {
 			.title,
 			.extra {
@@ -79,6 +159,8 @@
 			}
 		}
 
+		//Photo Block
+
 		.photo {
 			margin-top: auto;
 			width: 100%;
@@ -94,6 +176,7 @@
 			}
 		}
 
+		//Quantity Block
 		.quantity {
 			position: absolute;
 			right: 16px;
@@ -134,12 +217,21 @@
 		color: #ffffff;
 
 		> {
-			a {
+			span {
+				cursor: pointer;
 				color: #1698d9;
-				text-decoration: underline !important;
-				-webkit-text-decoration-style: dashed;
-				text-decoration-style: dashed;
+				text-decoration: dashed underline !important;
+				-webkit-text-decoration-style: dashed !important;
+				text-decoration-style: dashed !important;
+
+				&:hover {
+					color: #22a7e9;
+				}
 			}
+		}
+
+		&.empty {
+			color: #ffff66;
 		}
 	}
 }

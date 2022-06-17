@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './styles/global.scss';
 import { App } from './pages';
+import { CatProvider } from './context/CatContext';
+import './global.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<App />
+		<CatProvider>
+			<App />
+		</CatProvider>
 	</React.StrictMode>
 );
