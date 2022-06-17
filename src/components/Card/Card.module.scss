@@ -28,6 +28,9 @@
 			flex-wrap: wrap;
 			clip-path: polygon(13% 0, 100% 0, 100% 100%, 0 100%, 0% 9%);
 		}
+		@media (max-width: 768px) {
+			clip-path: polygon(13.5% 0, 100% 0, 100% 100%, 0 100%, 0% 9%);
+		}
 
 		@media (max-width: 326px) {
 			clip-path: polygon(14.5% 0, 100% 0, 100% 100%, 0 100%, 0% 9%);
